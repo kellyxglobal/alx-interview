@@ -1,10 +1,25 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
-0-main
+This module contains a function that generates Pascal's Triangle.
+
+Pascal's Triangle is a triangular array of numbers where each
+row is constructed by adding the two numbers above it to the left
+and right. The outermost numbers of each row are always 1.
 """
 
 
 def pascal_triangle(n):
+    """
+    Generate the first n rows of Pascal's Triangle.
+
+    Args:
+        n (int): The number of rows to generate.
+
+    Returns:
+        list: A list of lists representing the first n rows of
+        Pascal's Triangle. If n is less than or equal to 0,
+        an empty list is returned.
+    """
     if n <= 0:
         return []
 
