@@ -1,4 +1,5 @@
-cript for parsing HTTP request logs.
+#!/usr/bin/python3
+'''A script for parsing HTTP request logs.
 '''
 import re
 
