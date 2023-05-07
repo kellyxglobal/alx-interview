@@ -1,5 +1,4 @@
-
-g Parsing
+# Log Parsing
 
 This project contains interview coding challenges.
 
@@ -15,4 +14,3 @@ This project contains interview coding challenges.
       + If a status code doesn’t appear or is not an integer, don’t print anything for this status code.
       + Format: `<status code>: <number>`.
       + Status codes should be printed in ascending order.
-
