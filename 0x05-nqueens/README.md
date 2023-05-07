@@ -27,4 +27,3 @@ This project contains interview coding challenges.
       ```
     + You don’t have to print the solutions in a specific order.
   + You are only allowed to import the `sys` module.
-
