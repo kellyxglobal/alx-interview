@@ -1,27 +1,21 @@
 #!/usr/bin/python3
+'''A module for working with lockboxes.
+'''
 
-def minOperations(n):
-    """
-    Calculates the fewest number of operations needed to result in exactly n H characters in the file.
 
-    Args:
-    n (int): The number of H characters needed.
-
-    Returns:
-    int: The fewest number of operations needed to obtain n H characters. Returns 0 if n is impossible to achieve.
-    """
-
-    if n < 1:
-        return 0
-
-    operations = 0
-    factor = 2
-
-    while n > 1:
-        if n % factor == 0:
-            n //= factor
-            operations += factor
-        else:
-            factor += 1
-
-    return operations
+def canUnlockAll(boxes):
+    '''Checks if all the boxes in a list of boxes containing the keys
+    (indices) to other boxes can be unlocked given that the first
+    box is unlocked.
+    '''
+    n = len(boxes)
+    seen_boxes = set([0])
+    unseen_boxes = set(boxes[0]).difference(set([0]))
+    while len(unseen_boxes) > 0:
+        boxIdx = unseen_boxes.pop()
+        if not boxIdx or boxIdx >= n or boxIdx < 0:
+            continue
+        if boxIdx not in seen_boxes:
+            unseen_boxes = unseen_boxes.union(boxes[boxIdx])
+            seen_boxes.add(boxIdx)
+    return n == len(seen_boxes)
